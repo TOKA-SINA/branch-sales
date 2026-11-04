@@ -2,3 +2,5 @@
 // on GitHub Pages. Leave it empty when frontend and API share one host.
 window.BRANCH_SALES_API_BASE = "";
 
+
+// GitHub Pages deployment is enabled for the public frontend.
