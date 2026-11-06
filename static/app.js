@@ -42,7 +42,7 @@ function notify(message, error = false) {
 async function api(path, {body, method, binary} = {}) {
   const headers = token ? {Authorization:`Bearer ${token}`} : {};
   if (body && !(body instanceof Blob)) headers["Content-Type"] = "application/json";
-  const apiBase = String(window.BRANCH_SALES_API_BASE || "/api").replace(/\/$/,"");
+  const apiBase = String(window.BRANCH_SALES_API_BASE || "https://branch-sales-418.netlify.app").replace(/\/$/,"");
   const endpoint = apiBase === "/api" ? `${apiBase}/${path}` : `${apiBase}/api/${path}`;
   const response = await fetch(endpoint, {headers, method:method || (body ? "POST" : "GET"), body:body instanceof Blob ? body : body ? JSON.stringify(body) : undefined});
   if (!response.ok) {
